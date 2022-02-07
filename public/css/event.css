@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #f9f9f9;
+  font-family: 'PT Sans', sans-serif;
+  overflow-x: hidden;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  flex-wrap: wrap;
+  background: white;
+}
+.theNav {
+  margin-top: 10px;
+}
+.theNav > ul {
+  margin: auto 0;
+}
+.theNav > ul > li {
+  display: inline;
+}
+.theNav > ul > li > a {
+  text-decoration: none;
+  margin: 2px 20px;
+  color: black;
+}
+.menu-icon {
+  display: none !important;
+}
+.theNav > ul > .create-event {
+  background: #f58735;
+  color: white;
+}
+.theNav ul .create-event:hover {
+  background: transparent;
+  color: black;
+  border: 1px solid #f58735;
+  transition: 0.7s;
+}
+.create-event2 {
+  color: white;
+  background: #f58735;
+}
+.title > img {
+  width: 130px;
+}
+@media screen and (max-width: 653px) {
+  .theNav {
+    display: none !important;
+  }
+  .menu-icon {
+    display: initial !important;
+    font-size: 20px;
+    color: black;
+  }
+  .title > img {
+    width: 90px;
+  }
+}
+
+/* THE MOBILE NAVBAR SETTING */
+
+.nav-menu {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 550ms;
+  background-color: white;
+  z-index: 2;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+.closeIcon {
+  color: #283350;
+  float: right;
+  font-size: 20px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.sidenav {
+  margin-top: 100px;
+}
+.sidenav ul li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+.sidenav ul li a {
+  color: #283350;
+  text-decoration: none;
+}
+/*event header styling*/
+.top {
+  width: 100%;
+  height: 400px;
+  background: #0b1327;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top .header h2 {
+  color: white;
+  font-size: 60px;
+  text-align: center;
+}
+.line {
+  background-color: #f58735;
+  height: 3px;
+  width: 120px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  margin-top: 50px;
+}
+.desc {
+  background: #f58735;
+  margin-bottom: 10px;
+  padding: 10px;
+  color: white;
+}
+/*styling main information*/
+.desc-info {
+  width: 80%;
+  margin: 0 auto;
+}
+.desc-info img {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+}
+.desc-info .desc-box {
+  background: white;
+  border-radius: 10px;
+  margin-top: 40px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  margin-bottom: 30px;
+}
+.left-part {
+  padding: 20px 20px;
+}
+.left-part h4 {
+  margin-bottom: 20px;
+}
+.left-part h4 i {
+  margin-right: 10px;
+}
+.right-part {
+  padding: 20px 20px;
+  border-left: 1px solid #ddd5d5;
+}
+.right-part h4 {
+  margin-bottom: 20px;
+}
+.right-part h4 i {
+  margin-right: 10px;
+}
+.left-part p,
+.right-part p {
+  margin-bottom: 40px;
+}
+.venue {
+  border-top: 1px solid #ddd5d5;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+.venue h4 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.venue h4 i {
+  margin-right: 10px;
+}
+.venue .location {
+  padding-bottom: 30px;
+}
+.short-desc {
+  padding-bottom: 20px;
+}
+.pay {
+  background: white;
+  border-radius: 10px;
+  margin-top: 30px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  margin-bottom: 30px;
+}
+.pay-reg {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+.pay-vip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+.pay-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pay .bt {
+  border: none;
+  border-radius: 70px;
+  padding: 10px;
+  font-size: 20px;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+}
+.ticket-type {
+  font-size: 15px;
+}
+.pay-button button{
+  margin: 20px;
+  background: #f58735;
+  color: white;
+}
+@media screen and (max-width: 767px) {
+  .right-part {
+    border-left: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .top {
+    height: 300px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .top .header h2 {
+    font-size: 40px;
+  }
+}
+/*footer styling */
+footer {
+  background: #0b1327;
+  margin-top: 0px;
+}

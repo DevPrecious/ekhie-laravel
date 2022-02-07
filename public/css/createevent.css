@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+body {
+  background: #f9f9f9;
+  font-family: 'PT Sans', sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  flex-wrap: wrap;
+  background: white;
+}
+.theNav {
+  margin-top: 10px;
+}
+.theNav > ul {
+  margin: auto 0;
+}
+.theNav > ul > li {
+  display: inline;
+}
+.theNav > ul > li > a {
+  text-decoration: none;
+  margin: 2px 20px;
+  color: black;
+}
+.menu-icon {
+  display: none !important;
+}
+.theNav > ul > .create-event {
+  background: #f58735;
+  color: white;
+}
+.theNav ul .create-event:hover {
+  background: transparent;
+  color: black;
+  border: 1px solid #f58735;
+  transition: 0.7s;
+}
+.create-event2 {
+  color: white;
+  background: #f58735;
+}
+.title > img {
+  width: 130px;
+}
+@media screen and (max-width: 653px) {
+  .theNav {
+    display: none !important;
+  }
+  .menu-icon {
+    display: initial !important;
+    font-size: 20px;
+    color: black;
+  }
+  .title > img {
+    width: 90px;
+  }
+}
+
+/* THE MOBILE NAVBAR SETTING */
+
+.nav-menu {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 550ms;
+  background-color: white;
+  z-index: 2;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+.closeIcon {
+  color: #283350;
+  float: right;
+  font-size: 20px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.sidenav {
+  margin-top: 100px;
+}
+.sidenav ul li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+.sidenav ul li a {
+  color: #283350;
+  text-decoration: none;
+}
+/*footer styling */
+footer {
+  background: #0b1327;
+  margin-top: 0px;
+}
+/*add event form styling*/
+
+.add-event {
+  width: 90%;
+  margin: 40px auto;
+  border-radius: 5px;
+}
+.add-event-title {
+  padding: 20px 40px;
+}
+.add-event-title h3{
+  overflow-y: hidden;
+}
+.add-event form {
+  padding: 0 40px;
+}
+form .input {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.342);
+  border-radius: 3px;
+  height: 40px;
+  padding: 5px;
+  outline: none;
+  margin-bottom: 30px;
+}
+form textarea {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.342);
+  border-radius: 3px;
+  padding: 5px;
+  outline: none;
+  margin-bottom: 30px;
+}
+form label {
+  margin-bottom: 10px;
+}
+form label span {
+  font-size: 12px;
+  color: grey;
+  font-style: italic;
+}
+.date input {
+  margin-right: 5px;
+}
+.import-file {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+/*ticket section styling*/
+.ticket {
+  background: white;
+  border-radius: 5px;
+  margin-bottom: 40px;
+}
+.add-ticket {
+  margin-bottom: 20px;
+}
+.add-ticket button {
+  background: #f58735;
+  color: white;
+}
+.ticket-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+.ticket-top .intro{
+  overflow-y: hidden;
+}
+.add-btn {
+  background: #f58735;
+  color: white;
+  margin-right: 5px;
+}
+.submit{
+    background: #f58735;
+    color: white;
+    height: 50px;
+}
+/*media query for forms*/
+
+@media screen and (max-width: 500px) {
+  .add-event {
+    width: 100%;
+  }
+  .add-event form {
+    padding: 0 15px;
+  }
+  .add-event-title {
+    padding: 20px 15px;
+  }
+  .date input {
+    margin-bottom: 10px;
+  }
+  .ticket .intro {
+    text-align: center;
+  }
+  .tickets{
+      margin-bottom: 40px;
+      border-bottom: 1px solid rgba(128, 128, 128, 0.288);
+  }
+}

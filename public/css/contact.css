@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #f9f9f9;
+  font-family: 'PT Sans', sans-serif;
+  overflow-x: hidden;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  flex-wrap: wrap;
+  background: white;
+}
+.theNav {
+  margin-top: 10px;
+}
+.theNav > ul {
+  margin: auto 0;
+}
+.theNav > ul > li {
+  display: inline;
+}
+.theNav > ul > li > a {
+  text-decoration: none;
+  margin: 2px 20px;
+  color: black;
+}
+.menu-icon {
+  display: none !important;
+}
+.theNav > ul > .create-event {
+  background: #f58735;
+  color: white;
+}
+.theNav ul .create-event:hover {
+  background: transparent;
+  color: black;
+  border: 1px solid #f58735;
+  transition: 0.7s;
+}
+.create-event2 {
+  color: white;
+  background: #f58735;
+}
+.title > img {
+  width: 130px;
+}
+@media screen and (max-width: 653px) {
+  .theNav {
+    display: none !important;
+  }
+  .menu-icon {
+    display: initial !important;
+    font-size: 20px;
+    color: black;
+  }
+  .title > img {
+    width: 90px;
+  }
+}
+
+/* THE MOBILE NAVBAR SETTING */
+
+.nav-menu {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 550ms;
+  background-color: white;
+  z-index: 2;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+.closeIcon {
+  color: #283350;
+  float: right;
+  font-size: 20px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.sidenav {
+  margin-top: 100px;
+}
+.sidenav ul li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+.sidenav ul li a {
+  color: #283350;
+  text-decoration: none;
+}
+/*footer styling */
+footer {
+  background: #0b1327;
+  margin-top: 30px;
+}
+/*main styling*/
+.c-info .first-text{
+    margin-bottom: 40px;
+}
+.contact .details p{
+    margin-bottom: 30px;
+}
+
+
+.contact{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+form input{
+    width: 300px;
+    margin-bottom: 30px;
+    border: 1px solid #00000013;
+    height: 35px;
+    padding: 5px;
+}
+form textarea{
+    width: 300px;
+    border: 1px solid #00000013;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+form label{
+    margin-bottom: 7px;
+}
+form .btn-default{
+    width: 300px;
+    background: #f58735;
+    color: white;
+}

@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #f9f9f9;
+  font-family: 'PT Sans', sans-serif;
+  overflow-x: hidden;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  flex-wrap: wrap;
+  background: white;
+}
+.theNav {
+  margin-top: 10px;
+}
+.theNav > ul {
+  margin: auto 0;
+}
+.theNav > ul > li {
+  display: inline;
+}
+.theNav > ul > li > a {
+  text-decoration: none;
+  margin: 2px 20px;
+  color: black;
+}
+.menu-icon {
+  display: none !important;
+}
+.theNav > ul > .create-event {
+  background: #f58735;
+  color: white;
+}
+.theNav ul .create-event:hover {
+  background: transparent;
+  color: black;
+  border: 1px solid #f58735;
+  transition: 0.7s;
+}
+.create-event2 {
+  color: white;
+  background: #f58735;
+}
+.title > img {
+  width: 130px;
+}
+@media screen and (max-width: 653px) {
+  .theNav {
+    display: none !important;
+  }
+  .menu-icon {
+    display: initial !important;
+    font-size: 20px;
+    color: black;
+  }
+  .title > img {
+    width: 90px;
+  }
+}
+
+/* THE MOBILE NAVBAR SETTING */
+
+.nav-menu {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 550ms;
+  background-color: white;
+  z-index: 2;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+.closeIcon {
+  color: #283350;
+  float: right;
+  font-size: 20px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.sidenav {
+  margin-top: 100px;
+}
+.sidenav ul li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+.sidenav ul li a {
+  color: #283350;
+  text-decoration: none;
+}
+/*footer styling */
+footer {
+    background: #0b1327;
+    margin-top: 0px;
+  }
+/*login form styling*/
+
+
+.login-block {
+    margin: 30px auto;
+    min-height: 93.6vh
+  }
+  
+  .login-block .auth-box {
+    margin: 20px auto 0;
+    max-width: 450px !important
+  }
+  
+  .card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 5px 0 rgba(43, 43, 43, .1), 0 11px 6px -7px rgba(43, 43, 43, .1);
+    box-shadow: 0 0 5px 0 rgba(43, 43, 43, .1), 0 11px 6px -7px rgba(43, 43, 43, .1);
+    border: none;
+    margin-bottom: 30px;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    background-color: #fff
+  }
+  
+  .card .card-block {
+    padding: 1.25rem
+  }
+  
+  .f-80 {
+    font-size: 80px
+  }
+  
+  .form-group {
+    margin-bottom: 1.25em
+  }
+  
+  .form-material .form-control {
+    display: inline-block;
+    height: 43px;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 9px;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 1px solid #ccc
+  }
+  
+  .btn-md {
+    padding: 10px 16px;
+    font-size: 15px;
+    line-height: 23px
+  }
+  
+  .btn-primary {
+    background-color: #4099ff;
+    border-color: #4099ff;
+    color: #fff;
+    cursor: pointer;
+    -webkit-transition: all ease-in .3s;
+    transition: all ease-in .3s
+  }
+  
+  .btn {
+    border-radius: 2px;
+    text-transform: capitalize;
+    font-size: 15px;
+    padding: 10px 19px;
+    cursor: pointer
+  }
+  
+  .m-b-20 {
+    margin-bottom: 20px
+  }
+  
+  .btn-md {
+    padding: 10px 16px;
+    font-size: 15px;
+    line-height: 23px;
+    color: white !important;
+    width: 100%;
+    background: #f58735;
+    border: none;
+  }
+  .btn-md:hover{
+      background-color: #f58835a6;
+      color: black !important;
+  }
+  
+  .heading {
+    font-size: 30px
+  }
+  
+  #infoMessage p {
+    color: red !important
+  }
+  
+  .btn-google {
+    color: #545454;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 1px #ddd
+  }
+  @media screen and (max-width: 767px) {
+      .btn-google{
+          font-size: 12px;
+      }
+  }
+  
+  .or-container {
+    align-items: center;
+    color: #ccc;
+    display: flex;
+    margin: 25px 0
+  }
+  
+  .line-separator {
+    background-color: #ccc;
+    flex-grow: 5;
+    height: 1px
+  }
+  
+  .or-label {
+    flex-grow: 1;
+    margin: 0 15px;
+    text-align: center
+  }
+
+  .submit-btn{
+      color: black;
+  }

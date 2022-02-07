@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=PT+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #f9f9f9;
+  font-family: 'PT Sans', sans-serif;
+  overflow-x: hidden;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  flex-wrap: wrap;
+  background: white;
+}
+.theNav {
+  margin-top: 10px;
+}
+.theNav > ul {
+  margin: auto 0;
+}
+.theNav > ul > li {
+  display: inline;
+}
+.theNav > ul > li > a {
+  text-decoration: none;
+  margin: 2px 20px;
+  color: black;
+}
+.menu-icon {
+  display: none !important;
+}
+.theNav > ul > .create-event {
+  background: #f58735;
+  color: white;
+}
+.theNav ul .create-event:hover {
+  background: transparent;
+  color: black;
+  border: 1px solid #f58735;
+  transition: 0.7s;
+}
+.create-event2 {
+  color: white;
+  background: #f58735;
+}
+.title > img {
+  width: 130px;
+}
+@media screen and (max-width: 653px) {
+  .theNav {
+    display: none !important;
+  }
+  .menu-icon {
+    display: initial !important;
+    font-size: 20px;
+    color: black;
+  }
+  .title > img {
+    width: 90px;
+  }
+}
+
+/* THE MOBILE NAVBAR SETTING */
+
+.nav-menu {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 550ms;
+  background-color: white;
+  z-index: 2;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+.closeIcon {
+  color: #283350;
+  float: right;
+  font-size: 20px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.sidenav {
+  margin-top: 100px;
+}
+.sidenav ul li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+.sidenav ul li a {
+  color: #283350;
+  text-decoration: none;
+}
+.slider {
+  z-index: 10000;
+}
+
+/*styling the slider*/
+/*responsiveness for slider images*/
+@media screen and (min-width: 700px) {
+  .carousel .carousel-item {
+    max-height: 450px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .carousel .carousel-item {
+    max-height: 250px;
+  }
+}
+/*search section styling*/
+.search-box {
+  margin-top: 20px;
+}
+.search {
+  position: relative;
+  box-shadow: 0 0 40px rgba(51, 51, 51, 0.1);
+}
+.search input {
+  height: 60px;
+  text-indent: 25px;
+  border: 2px solid #d6d4d4;
+}
+.search input:focus {
+  box-shadow: none;
+  border: 2px solid #f58735;
+}
+.search .fa-search {
+  position: absolute;
+  top: 20px;
+  left: 16px;
+}
+.search button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 50px;
+  width: 110px;
+  background: #f58735;
+  color: white;
+}
+/*styling the cards*/
+.events {
+  margin-top: 50px;
+}
+.events h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.line {
+  background-color: #f58735;
+  height: 2px;
+  width: 120px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+.special {
+  font-weight: 800;
+  font-family: 'Staatliches', cursive;
+}
+.content-image {
+  overflow: hidden;
+}
+.content-image img {
+  transform: scale(1);
+  transition: 0.3s ease-in-out;
+}
+.content-image:hover img {
+  transform: scale(1.3);
+}
+.card-body .content-info {
+  margin-top: 10px;
+}
+.action {
+  height: 50px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.buy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.buy button {
+  background-color: #f58735;
+  color: white;
+  display: inline;
+  margin-top: auto;
+}
+.buy .share i {
+  margin-right: 10px;
+}
+@media screen and (min-width: 767px) {
+  .content-card {
+    max-width: 540px;
+    min-height: 250px;
+  }
+  .content-card img {
+    height: 250px;
+    object-fit: cover;
+  }
+  .card-body .content-info {
+    margin-top: 40px;
+  }
+  .action {
+    height: 106px;
+  }
+}
+/*styling the submit event */
+.submit-notif{
+  background: 
+  /* top, transparent red */ 
+  linear-gradient(
+    rgba(245, 136, 53, 0.555), 
+    rgba(245, 136, 53, 0.555)
+  ),
+  url(../images/party.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  height: 300px;
+  background-size: cover;
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+}
+.submit-notif .container{
+  margin: auto;
+}
+.submit-notif .row .col-md-4{
+  text-align: center;
+  color: white;
+}
+.submit-notif .line2{
+  background-color: white;
+  height: 3px;
+  width: 70px;
+  display: block;
+  margin: 20px auto;
+}
+.submit-notif h3{
+  font-size: 40px;
+}
+.submit-notif p{
+  font-size: 25px;
+}
+@media screen and (max-width: 767px) {
+  .submit-notif h3{
+    font-size: 20px;
+    font-weight: 800;
+  }
+  .submit-notif p{
+    font-size: 15px;
+    font-weight: 800;
+  }
+  .submit-notif .row{
+    margin: 0 30px;
+  }
+  .submit-notif .line2{
+    margin: 10px auto;
+  }
+}
+/*styling the footer*/
+footer {
+  background: #0b1327;
+  margin-top: 0px;
+}

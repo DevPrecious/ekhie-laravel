@@ -1,0 +1,401 @@
+@import url("https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=PT+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #f9f9f9;
+  font-family: "PT Sans", sans-serif;
+  overflow-x: hidden;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  flex-wrap: wrap;
+  background: white;
+}
+.theNav {
+  margin-top: 10px;
+}
+.theNav > ul {
+  margin: auto 0;
+}
+.theNav > ul > li {
+  display: inline;
+}
+.theNav > ul > li > a {
+  text-decoration: none;
+  margin: 2px 20px;
+  color: black;
+}
+.menu-icon {
+  display: none !important;
+}
+.theNav > ul > .create-event {
+  background: #f58735;
+  color: white;
+}
+.theNav ul .create-event:hover {
+  background: transparent;
+  color: black;
+  border: 1px solid #f58735;
+  transition: 0.7s;
+}
+.create-event2 {
+  color: white;
+  background: #f58735;
+}
+.title > img {
+  width: 130px;
+}
+@media screen and (max-width: 653px) {
+  .theNav {
+    display: none !important;
+  }
+  .menu-icon {
+    display: initial !important;
+    font-size: 20px;
+    color: black;
+  }
+  .title > img {
+    width: 90px;
+  }
+  nav {
+    display: flex;
+    align-items: flex-start !important;
+    justify-content: flex-start;
+    padding: 10px;
+    flex-wrap: wrap;
+    background: white;
+    gap: 20px;
+  }
+}
+
+/* THE MOBILE NAVBAR SETTING */
+
+.nav-menu {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 550ms;
+  background-color: white;
+  z-index: 2;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+.closeIcon {
+  color: #283350;
+  float: right;
+  font-size: 20px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.sidenav {
+  margin-top: 100px;
+}
+.sidenav ul li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+.sidenav ul li a {
+  color: #283350;
+  text-decoration: none;
+}
+/*footer styling */
+footer {
+  background: #0b1327;
+  margin-top: 0px;
+}
+/*dashboard styling*/
+.other-btn {
+  color: white;
+  background: #f58735;
+  border: none;
+}
+main .board {
+  display: flex;
+  align-items: flex-start;
+}
+.board .side {
+  flex: 0.2;
+  background: white;
+}
+.board .content {
+  flex: 0.8;
+}
+.side-content {
+  display: block;
+  padding-top: 20px;
+  width: 70%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 100px;
+}
+.side-content a {
+  margin-bottom: 20px;
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+}
+.side-content a div {
+  padding: 10px;
+}
+.side-content a div:hover {
+  background: #f58735;
+  color: white !important;
+  border-radius: 5px;
+  padding: 10px;
+}
+.side-content a div.active {
+  background: #f5883571;
+  color: white !important;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/*dashboard media query*/
+@media screen and (max-width: 653px) {
+  .board .side {
+    display: none !important;
+  }
+  .board .content {
+    flex: 1;
+  }
+}
+
+/*styling for dashboard pages*/
+
+/*styling for dashboard event review page*/
+.ctn{
+    background: white;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 5px;
+  }
+@media screen and (max-width: 400px) {
+    .ctn {
+      overflow-x: scroll;
+      margin: 10px;
+    }
+  }
+  @media screen and (max-width: 653px) {
+      .review-main{
+        margin-bottom: 100px;
+      }
+  }
+.view-btn{
+    background: #f58735;
+    color: white;
+}
+.view-btn2{
+    background: rgb(7, 158, 7);
+    color: white;
+}
+.view-btn3{
+  background: red;
+  color: white;
+}
+.edit{
+  color: #0b1327;
+  text-decoration: none;
+  border-right: 1px solid #00000018;
+  padding-right: 10px;
+}
+.delete{
+  color: red;
+  text-decoration: none;
+}
+
+/*add event form styling*/
+
+.add-event {
+  width: 90%;
+  margin: 40px auto;
+  border-radius: 5px;
+}
+.add-event-title {
+  padding: 20px 40px;
+}
+.add-event-title h3{
+  overflow-y: hidden;
+}
+.add-event form {
+  padding: 0 40px;
+}
+form .input {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.342);
+  border-radius: 3px;
+  height: 40px;
+  padding: 5px;
+  outline: none;
+  margin-bottom: 30px;
+}
+form textarea {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.342);
+  border-radius: 3px;
+  padding: 5px;
+  outline: none;
+  margin-bottom: 30px;
+}
+form label {
+  margin-bottom: 10px;
+}
+form label span {
+  font-size: 12px;
+  color: grey;
+  font-style: italic;
+}
+.date input {
+  margin-right: 5px;
+}
+.import-file {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 635px) {
+  .event-main{
+    margin-bottom: 100px;
+  }
+}
+/*ticket section styling*/
+.ticket {
+  background: white;
+  border-radius: 5px;
+  margin-bottom: 40px;
+}
+.add-ticket {
+  margin-bottom: 20px;
+}
+.add-ticket button {
+  background: #f58735;
+  color: white;
+}
+.ticket-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+.ticket-top .intro{
+  overflow-y: hidden;
+}
+.add-btn {
+  background: #f58735;
+  color: white;
+  margin-right: 5px;
+}
+.submit{
+    background: #f58735;
+    color: white;
+    height: 50px;
+}
+/*media query for forms*/
+
+@media screen and (max-width: 500px) {
+  .add-event {
+    width: 100%;
+  }
+  .add-event form {
+    padding: 0 15px;
+  }
+  .add-event-title {
+    padding: 20px 15px;
+  }
+  .date input {
+    margin-bottom: 10px;
+  }
+  .ticket .intro {
+    text-align: center;
+  }
+  .tickets{
+      margin-bottom: 40px;
+      border-bottom: 1px solid rgba(128, 128, 128, 0.288);
+  }
+}
+
+/*my products styling*/
+.product-content h4 {
+  padding: 20px;
+}
+@media screen and (max-width: 635px) {
+  .product-main{
+    margin-bottom: 100px;
+  }
+}
+
+/*styling for dashboard orders page*/
+.order-table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+.order-table td,
+.order-table th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+.order-table tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.view-btn {
+  background: #f58735;
+  color: white;
+}
+
+@media screen and (max-width: 400px) {
+  .order-content {
+    overflow-x: scroll;
+  }
+}
+@media screen and (max-width: 635px) {
+  .order-main{
+    margin-bottom: 100px;
+  }
+}
+/*styling for dashboard earnings page*/
+.my-earning{
+  width: 80%;
+  margin: 20px auto;
+}
+.earning-details{
+  background: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+@media screen and (max-width: 635px) {
+  .earning-main{
+    margin-bottom: 300px;
+  }
+}
+/*styling for dashboard settings page*/
+.setting-content form {
+  padding: 30px;
+}
+.password-change{
+    margin-top: 50px;
+}
+
+/*styling for dashboard organisers page*/
+@media screen and (max-width: 635px) {
+  .organisers-main{
+    margin-bottom: 100px;
+  }
+}
