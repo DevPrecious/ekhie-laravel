@@ -1,9 +1,9 @@
-@extends('layouts.dashboard')
+@extends('layouts.admin')
 @section('content')
 
 <main class="product-main">
     <div class="board">
-        @include('layouts.desktop')
+        @include('layouts.admindesk')
       <div class="content product-content">
         <h4>Products overview</h4>
         <table class="table">

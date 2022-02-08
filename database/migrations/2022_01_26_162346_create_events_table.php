@@ -30,6 +30,7 @@ class CreateEventsTable extends Migration
             $table->string('country');
             $table->string('organizer');
             $table->string('url');
+            $table->boolean('is_active')->default(0);
             $table->timestamps();
         });
     }

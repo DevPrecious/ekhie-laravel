@@ -10,4 +10,14 @@ class Orders extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    // public function tickets()
+    // {
+    //     return $this->hasMany(Ticket::class);
+    // }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

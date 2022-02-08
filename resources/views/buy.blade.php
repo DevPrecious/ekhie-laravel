@@ -35,6 +35,9 @@
                                     @foreach ($type as $item)
                                     <input type="hidden" name="type[]" value="{{ $item }}">
                                     @endforeach
+                                    @foreach ($price as $item)
+                                    <input type="hidden" name="indvprice[]" value="{{ $item }}">
+                                    @endforeach
                                     <input type="hidden" name="price" value="{{$total}}">
                                     <input type="hidden" name="event_id" value="{{$event_id}}">
                                     

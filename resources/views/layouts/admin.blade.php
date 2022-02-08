@@ -54,13 +54,13 @@
             <div class="sidenav">
                 <ul>
                     <li>
-                        <a href="adeventreview.html">Event Review</a>
+                        <a href="{{ route('admin.home') }}">Event Review</a>
                     </li>
                     <li>
-                        <a href="adevents.html">All Events</a>
+                        <a href="{{ route('events') }}">All Events</a>
                     </li>
                     <li>
-                        <a href="adorganisers.html">Organisers</a>
+                        <a href="{{ route('admin.organizers') }}">Organisers</a>
                     </li>
                     <li>
                         <a href="{{ route('create') }}">Create Event</a>
@@ -75,7 +75,7 @@
                         <a href="adearnings.html">My Earnings</a>
                     </li>
                     <li>
-                        <a href="adsettings.html">Settings</a>
+                        <a href="{{ route('admin.settings') }}">Settings</a>
                     </li>
                     <li>
                         <a href="#">Logout</a>

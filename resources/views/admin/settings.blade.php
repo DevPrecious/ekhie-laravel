@@ -1,16 +1,16 @@
-@extends('layouts.dashboard')
+@extends('layouts.admin')
 @section('content')
 
 <main>
     <div class="board">
-        @include('layouts.desktop')
+        @include('layouts.admindesk')
         <div class="content setting-content">
             @if (session()->has('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
             </div>
             @endif
-            <form method="POST" action="{{ route('user.setting') }}">
+            <form method="POST" action="{{ route('admin.setting') }}">
                 @csrf
                 <!-- 2 column grid layout with text inputs for the first and last names -->
                 <div class="row mb-4">

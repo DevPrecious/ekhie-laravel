@@ -12,8 +12,18 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/5ddb92922b.js" crossorigin="anonymous"></script>
+    @if(Request::segment(1) == 'dashboard')
     <link rel="stylesheet" href="{{ asset('css/udashboard.css') }}" />
+    @endif
+    @if(Request::segment(1) == 'create')
     <link rel="stylesheet" href="{{ asset('css/createevent.css') }}" />
+    @endif
+    @if(Request::segment(1) == 'orders')
+    <link rel="stylesheet" href="{{ asset('css/udashboard.css') }}" />
+    @endif
+    @if(Request::segment(1) == 'details')
+    <link rel="stylesheet" href="{{ asset('css/orderdetails.css') }}" />
+    @endif
     <!--trying owl carousel-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -57,10 +67,10 @@
             <div class="sidenav">
                 <ul>
                     <li>
-                        <a href="udproduct.html">Products</a>
+                        <a href="{{ route('dashboard') }}">Products</a>
                     </li>
                     <li>
-                        <a href="udorders.html">Orders</a>
+                        <a href="{{ route('orders') }}">Orders</a>
                     </li>
                     <li>
                         <a href="udearnings.html">Earnings</a>

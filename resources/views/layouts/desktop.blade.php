@@ -1,9 +1,9 @@
 <div class="side">
     <div class="side-content">
-        <a href="udproduct.html">
+        <a href="{{ route('dashboard') }}">
             <div class="product active">Products</div>
         </a>
-        <a href="udorders.html">
+        <a href="{{ route('orders') }}">
             <div class="orders">Orders</div>
         </a>
         <a href="udearnings.html">
