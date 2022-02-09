@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Earning;
 use App\Models\Event;
 use App\Models\Orders;
 use Illuminate\Http\Request;
@@ -32,5 +33,11 @@ class HomeController extends Controller
     {
         $product = Orders::where('orders.id', $id)->join('tickets', 'tickets.id', '=', 'orders.id')->first();
         return view('user.details', compact('product'));
+    }
+
+    public function earnings()
+    {
+        $earnings = Earning::where('user_id', auth()->user()->id)->first();
+        return view('user.earnings', compact('earnings'));
     }
 }

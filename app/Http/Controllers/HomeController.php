@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Earning;
 use App\Models\Event;
 use App\Models\Orders;
 use App\Models\Ticket;
@@ -25,7 +26,7 @@ class HomeController extends Controller
             ->join('profiles', 'events.user_id', '=', 'profiles.user_id')
             ->first();
         $tickets  = Ticket::where('event_id', $id)->get();
-        if($event->is_active == 0){
+        if ($event->is_active == 0) {
             return redirect()->route('homepage');
         }
         // dd($event);
@@ -40,18 +41,18 @@ class HomeController extends Controller
         $type = $request->input('type');
         $event_id = $request->input('event');
         $total = 0;
-        for($i = 0; $i < count($quantity); $i++) {
+        for ($i = 0; $i < count($quantity); $i++) {
             $n_quantity = (int)$quantity[$i];
             $n_price = (int)$price[$i];
             $total += $n_quantity * $n_price;
         }
-       
+
         $data = [
             'total' => $total,
             'event_id' => $event_id,
         ];
 
-        for($i = 0; $i < count($type); $i++) {
+        for ($i = 0; $i < count($type); $i++) {
             $data['type'][$i] = $type[$i];
             $data['qty'][$i] = $quantity[$i];
             $data['price'][$i] = $price[$i];
@@ -59,17 +60,18 @@ class HomeController extends Controller
         }
         $data['user'] = $user;
         // dd($data);
-        
+
 
         return view('buy', $data);
     }
 
-    public function purchase(Request $request){
+    public function purchase(Request $request)
+    {
         $quantity = $request->input('qty');
         $type = $request->input('type');
         $price = $request->input('indvprice');
         $array = [];
-        for($i = 0; $i < count($type); $i++) {
+        for ($i = 0; $i < count($type); $i++) {
             $datatosave = [
                 'type' => $type[$i],
                 'qty' => $quantity[$i],
@@ -86,7 +88,7 @@ class HomeController extends Controller
         }
         session()->put('data', $array);
         // dd(session()->get('data'));
-        
+
 
         $reference = Flutterwave::generateReference();
         $data = [
@@ -111,8 +113,6 @@ class HomeController extends Controller
         }
 
         return redirect($payment['data']['link']);
-
-        
     }
 
     public function callback()
@@ -121,33 +121,47 @@ class HomeController extends Controller
 
         //if payment is successful
         if ($status ==  'successful') {
-        
-        $transactionID = Flutterwave::getTransactionIDFromCallback();
-        $data = Flutterwave::verifyTransaction($transactionID);
 
-        foreach(session()->get('data') as $key => $value) {
-            $data = [
-                'type' => $value['type'],
-                'qty' => $value['qty'],
-                'event_id' => $value['event_id'],
-                'firstname' => $value['firstname'],
-                'lastname' => $value['lastname'],
-                'email' => $value['email'],
-                'phone' => $value['phone'],
-                'total' => $value['total'],
-                'orderID' => rand(),
-                'user_id' => auth()->user()->id,
-                // 'user_id' => $value['user_id'],
-                // 'transaction_id' => $transactionID,
-            ];
+            $transactionID = Flutterwave::getTransactionIDFromCallback();
+            $data = Flutterwave::verifyTransaction($transactionID);
+
+            foreach (session()->get('data') as $key => $value) {
+                $data = [
+                    'type' => $value['type'],
+                    'qty' => $value['qty'],
+                    'event_id' => $value['event_id'],
+                    'firstname' => $value['firstname'],
+                    'lastname' => $value['lastname'],
+                    'email' => $value['email'],
+                    'phone' => $value['phone'],
+                    'total' => $value['total'],
+                    'orderID' => rand(),
+                    'user_id' => auth()->user()->id,
+                    // 'user_id' => $value['user_id'],
+                    // 'transaction_id' => $transactionID,
+                ];
+                // dd($data['total']);
+            }
             Orders::create($data);
-        }
-        return redirect()->route('order')->with('success', 'Order Successful');
-        }
-        elseif ($status ==  'cancelled'){
+            $event = Event::find($data['event_id']);
+            $balance = Earning::where('user_id', $event->user_id)->first();
+            if ($balance) {
+                // dd($value['total']);
+                $bal = new Earning();
+                $newbal = (int)$balance['balance'] + (int)$value['total'];
+                $baldata['balance'] = $newbal;
+                $bal->where('user_id', $event->user_id)->update($baldata);
+            } else {
+                // dd($data['total']);
+                Earning::create([
+                    'user_id' => $event->user_id,
+                    'balance' => (int)$value['total'],
+                ]);
+            }
+            return redirect()->route('order')->with('success', 'Order Successful');
+        } elseif ($status ==  'cancelled') {
             //Put desired action/code after transaction has been cancelled here
-        }
-        else{
+        } else {
             //Put desired action/code after transaction has failed here
         }
     }
@@ -155,7 +169,7 @@ class HomeController extends Controller
     public function order()
     {
         $array = [];
-        foreach(session()->get('data') as $key => $value) {
+        foreach (session()->get('data') as $key => $value) {
             $data = [
                 'type' => $value['type'],
                 'qty' => $value['qty'],
@@ -174,7 +188,7 @@ class HomeController extends Controller
         // dd($array);
         return view('orders', compact('array'));
     }
-    
+
     public function clear()
     {
         session()->forget('data');

@@ -29,7 +29,7 @@ Route::get('/create', [UserEventController::class, 'index'])->name('create');
 Route::get('/settings', [UserController::class, 'settings'])->name('user.settings');
 Route::post('/setting', [UserController::class, 'savesettings'])->name('user.setting');
 Route::get('/event/{id}', [ControllersHomeController::class, 'event'])->name('event');
-Route::any('/store', [ControllersHomeController::class, 'store'])->name('store');
+Route::any('/store', [ControllersHomeController::class, 'store'])->name('store')->middleware('auth');
 Route::any('/buy', [ControllersHomeController::class, 'buy'])->name('buy');
 Route::any('/purchase', [ControllersHomeController::class, 'purchase'])->name('purchase');
 Route::get('/order', [ControllersHomeController::class, 'order'])->name('order')->middleware('order_check');
@@ -38,7 +38,7 @@ Route::get('/callback', [ControllersHomeController::class, 'callback'])->name('c
 Route::post('/clear', [ControllersHomeController::class, 'clear'])->name('clear');
 Route::get('/shop', [ShopController::class, 'shop'])->name('shop');
 Route::get('/cart', [ShopController::class, 'cart'])->name('cart');
-// Route::get('/products', [HomeController::class, 'product'])->name('product');
+Route::get('/earnings', [HomeController::class, 'earnings'])->name('earnings');
 
 
 

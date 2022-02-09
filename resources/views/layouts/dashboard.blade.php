@@ -12,7 +12,7 @@
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/5ddb92922b.js" crossorigin="anonymous"></script>
-    @if(Request::segment(1) == 'dashboard')
+    @if(Request::segment(1) == 'dashboard' || Request::segment(1) == 'earnings' || Request::segment(1) == 'settings')
     <link rel="stylesheet" href="{{ asset('css/udashboard.css') }}" />
     @endif
     @if(Request::segment(1) == 'create')
@@ -47,7 +47,7 @@
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                         <li>
-                            <button class="dropdown-item" type="button"><a href="/udsettings.html">Settings</a></button>
+                            <button class="dropdown-item" type="button"><a href="{{ route('user.settings') }}">Settings</a></button>
                         </li>
                         <li>
                             <form action="{{ route('logout') }}" method="POST">
@@ -73,7 +73,7 @@
                         <a href="{{ route('orders') }}">Orders</a>
                     </li>
                     <li>
-                        <a href="udearnings.html">Earnings</a>
+                        <a href="{{ route('earnings') }}">Earnings</a>
                     </li>
                     <li>
                         <a href="{{ route('user.settings') }}">Settings</a>

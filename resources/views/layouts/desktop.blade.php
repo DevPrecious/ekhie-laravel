@@ -1,16 +1,16 @@
 <div class="side">
     <div class="side-content">
         <a href="{{ route('dashboard') }}">
-            <div class="product active">Products</div>
+            <div class="product @if(Request::segment(1) == 'dashboard') active @endif">Products</div>
         </a>
         <a href="{{ route('orders') }}">
-            <div class="orders">Orders</div>
+            <div class="orders  @if(Request::segment(1) == 'orders') active @endif">Orders</div>
         </a>
-        <a href="udearnings.html">
-            <div class="Earnings">Earnings</div>
+        <a href="{{ route('earnings') }}">
+            <div class="Earnings  @if(Request::segment(1) == 'earnings') active @endif">Earnings</div>
         </a>
         <a href="{{ route('user.settings') }}">
-            <div class="settings">Settings</div>
+            <div class="settings  @if(Request::segment(1) == 'settings') active @endif">Settings</div>
         </a>
         <form action="{{ route('logout') }}" method="POST">
             @csrf
