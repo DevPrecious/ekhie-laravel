@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EventController;
 use App\Http\Controllers\HomeController as ControllersHomeController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\User\EventController as UserEventController;
 use App\Http\Controllers\User\HomeController;
 use App\Http\Controllers\User\UserController;
@@ -40,6 +41,13 @@ Route::post('/clear', [ControllersHomeController::class, 'clear'])->name('clear'
 Route::get('/store', [ShopController::class, 'shop'])->name('shop');
 Route::get('/cart', [ShopController::class, 'cart'])->name('cart');
 Route::get('/earnings', [HomeController::class, 'earnings'])->name('earnings');
+Route::get('cart', [CartController::class, 'cartList'])->name('cart.list');
+Route::post('cart', [CartController::class, 'addToCart'])->name('cart.store');
+Route::post('update-cart', [CartController::class, 'updateCart'])->name('cart.update');
+Route::post('remove', [CartController::class, 'removeCart'])->name('cart.remove');
+Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear');
+Route::post('/store/buy', [CartController::class, 'buy'])->name('store.buy');
+Route::get('/shop/callback', [CartController::class, 'callback'])->name('shop.callback');
 
 
 

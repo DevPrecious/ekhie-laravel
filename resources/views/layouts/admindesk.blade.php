@@ -23,6 +23,9 @@
       <a href="{{ route('admin.settings') }}"
         ><div class="my-settings @if(Request::segment(2) == 'settings') active @endif">Settings</div></a
       >
-      <a href="#"><div class="logout">Logout</div></a>
+        <form action="{{ route('logout') }}" method="post">
+          @csrf
+            <button class="btn active">Logout</button>
+        </form>
     </div>
   </div>

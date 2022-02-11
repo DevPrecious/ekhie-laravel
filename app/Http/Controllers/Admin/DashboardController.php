@@ -8,6 +8,7 @@ use App\Models\Event;
 use App\Models\Orders;
 use App\Models\Profile;
 use App\Models\Shop;
+use App\Models\Sold;
 use App\Models\Ticket;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -127,14 +128,18 @@ class DashboardController extends Controller
     public function products()
     {
         $products = Event::where('user_id', auth()->id())->join('tickets', 'events.id', '=', 'tickets.event_id')->get();
-        return view('admin/myproducts', compact('products'));
+        $shops = Shop::where('user_id', auth()->id())->get();
+        return view('admin/myproducts', compact('products', 'shops'));
     }
 
 
     public function orders()
     {
         $orders = Orders::where('orders.user_id', auth()->user()->id)->get();
-        return view('admin.orders', compact('orders'));
+        $shops_order = Sold::where('solds.user_id', auth()->user()->id)->join('profiles', 'solds.user_id', '=', 'profiles.user_id')
+        ->join('shops', 'solds.product_id', '=', 'shops.id')
+        ->join('users', 'solds.user_id', '=', 'users.id')->get();
+        return view('admin.orders', compact('orders', 'shops_order'));
     }
 
 

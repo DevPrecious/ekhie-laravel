@@ -162,6 +162,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         KingFlamez\Rave\RaveServiceProvider::class,
+        Darryldecode\Cart\CartServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -231,6 +232,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Rave' => KingFlamez\Rave\Facades\Rave::class,
+        'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
 
     ],
 

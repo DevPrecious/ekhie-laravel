@@ -25,7 +25,7 @@
             <div class="menu-icon">
                 <i class="fas fa-bars" onclick="showSidebar()"></i>
             </div>
-            <a href="index.html" class="title">
+            <a href="/" class="title">
                 <img src="{{ asset('images/logo.png') }}" alt="" />
             </a>
             <div class="theNav">
@@ -81,7 +81,9 @@
                         <a href="{{ route('admin.settings') }}">Settings</a>
                     </li>
                     <li>
-                        <a href="#">Logout</a>
+                        <form action="{{ route('logout') }}" method="post">
+                            <button class="btn active">Logout</button>
+                        </form>
                     </li>
                 </ul>
             </div>

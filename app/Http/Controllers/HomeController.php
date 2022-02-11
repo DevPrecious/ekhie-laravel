@@ -93,7 +93,7 @@ class HomeController extends Controller
         $reference = Flutterwave::generateReference();
         $data = [
             'payment_options' => 'card,banktransfer',
-            'amount' => 500,
+            'amount' => $datatosave['total'],
             'email' => $request->input('email'),
             'tx_ref' => $reference,
             'currency' => "NGN",

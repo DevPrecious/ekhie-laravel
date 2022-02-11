@@ -37,12 +37,35 @@
                         <a href="about.html">About</a>
                     </li>
                     <li>
+                        <a href="{{ route('shop') }}">Shop</a>
+                      </li>
+                    @if (Route::has('login'))
+                    @auth
+                    @if(Auth::user()->is_admin == '1')
+                    <li>
+                        <a href="{{ route('admin.home') }}">Admin</a>
+                    </li>
+                    @else
+                    <li>
+                        <a href="{{ route('dashboard') }}">Dashboard</a>
+                    </li>
+                    @endif
+                    @else
+                    <li>
                         <a href="{{ route('register') }}">Signup</a>
                     </li>
                     <li>
                         <a href="{{ route('login') }}">Login</a>
                     </li>
+                    @endauth
+                    @endif
+                    @auth
                     <button class="btn btn-default create-event">Create Event</button>
+                    {{-- <form action="{{ route('logout') }}">
+                        @csrf
+                        <button class="btn btn-default create-event" type="submit">Logout</button>
+                    </form> --}}
+                    @endauth
                 </ul>
             </div>
             <div class="menu-icon">
