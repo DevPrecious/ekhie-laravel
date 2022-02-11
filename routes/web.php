@@ -36,7 +36,8 @@ Route::get('/order', [ControllersHomeController::class, 'order'])->name('order')
 Route::get('/details/{id}', [HomeController::class, 'details'])->name('details');
 Route::get('/callback', [ControllersHomeController::class, 'callback'])->name('callback');
 Route::post('/clear', [ControllersHomeController::class, 'clear'])->name('clear');
-Route::get('/shop', [ShopController::class, 'shop'])->name('shop');
+// Route::get('/shop', [ShopController::class, 'shop'])->name('shop');
+Route::get('/store', [ShopController::class, 'shop'])->name('shop');
 Route::get('/cart', [ShopController::class, 'cart'])->name('cart');
 Route::get('/earnings', [HomeController::class, 'earnings'])->name('earnings');
 
@@ -53,6 +54,10 @@ Route::middleware(['is_admin'])->group(function(){
     Route::get('admin/organizers', [DashboardController::class, 'organizers'])->name('admin.organizers');
     Route::get('admin/organizers/{id}', [DashboardController::class, 'delete'])->name('admin.delete');
     Route::get('admin/products', [DashboardController::class, 'products'])->name('admin.products');
+    Route::get('admin/orders', [DashboardController::class, 'orders'])->name('admin.orders');
+    Route::get('admin/earnings', [DashboardController::class, 'earnings'])->name('admin.earnings');
+    Route::get('admin/shop', [DashboardController::class, 'shop'])->name('admin.shop');
+    Route::post('admin/shop', [DashboardController::class, 'store'])->name('store.shop');
 });
 
 require __DIR__.'/auth.php';

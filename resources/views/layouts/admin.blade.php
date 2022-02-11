@@ -66,13 +66,16 @@
                         <a href="{{ route('create') }}">Create Event</a>
                     </li>
                     <li>
-                        <a href="admyproducts.html">My Products</a>
+                        <a href="{{ route('admin.products') }}">My Products</a>
                     </li>
                     <li>
-                        <a href="adorders.html">All Orders</a>
+                        <a href="{{ route('admin.orders') }}">All Orders</a>
                     </li>
                     <li>
-                        <a href="adearnings.html">My Earnings</a>
+                        <a href="{{ route('admin.shop') }}">Shop</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.earnings') }}">My Earnings</a>
                     </li>
                     <li>
                         <a href="{{ route('admin.settings') }}">Settings</a>

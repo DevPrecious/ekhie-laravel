@@ -1,8 +1,8 @@
-@extends('layouts.dashboard')
+@extends('layouts.admin')
 @section('content')
 <main>
     <div class="board">
-        @include('layouts.desktop')
+        @include('layouts.admindesk')
       <div class="content earnings-content">
         <div class="my-earning">
           <h4>My Earnings</h4>

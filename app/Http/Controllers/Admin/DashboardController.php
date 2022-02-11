@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Earning;
 use App\Models\Event;
+use App\Models\Orders;
 use App\Models\Profile;
+use App\Models\Shop;
 use App\Models\Ticket;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -125,5 +128,46 @@ class DashboardController extends Controller
     {
         $products = Event::where('user_id', auth()->id())->join('tickets', 'events.id', '=', 'tickets.event_id')->get();
         return view('admin/myproducts', compact('products'));
+    }
+
+
+    public function orders()
+    {
+        $orders = Orders::where('orders.user_id', auth()->user()->id)->get();
+        return view('admin.orders', compact('orders'));
+    }
+
+
+    public function earnings()
+    {
+        $earnings = Earning::where('user_id', auth()->user()->id)->first();
+        return view('admin.earnings', compact('earnings'));
+    }
+
+    public function shop()
+    {
+        return view('admin/shop');
+    }
+
+    public function store(Request $request){
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'description' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        // upload image and save data to shop table
+        $imageName = time().'.'.$request->image->extension();
+        $request->image->move(public_path('shop'), $imageName);
+        $shop = new Shop();
+        $shop->name = $request->name;
+        $shop->price = $request->price;
+        $shop->description = $request->description;
+        $shop->image = $imageName;
+        $shop->user_id = auth()->id();
+        $shop->save();
+
+        return redirect()->route('admin.shop')->with('success', 'Product added');
     }
 }
